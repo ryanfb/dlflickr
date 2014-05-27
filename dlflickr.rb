@@ -5,6 +5,8 @@ require 'open-uri'
 
 ARGF.each_line do |line|
   line.chomp!
+  line.sub!(/^http\:/,'https:')
+  line.sub!(/\/in\/.*/,'') # strip off /in/photostream/, /in/pool-* etc.
   save_file = line.split('/')[-2..-1].join('_') + '.jpg'
   begin
     unless File.exist?(save_file)
