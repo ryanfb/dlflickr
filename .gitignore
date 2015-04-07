@@ -1,1 +1,4 @@
 .secrets.yml
+.rsync-dest
+images
+images.csv

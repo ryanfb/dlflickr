@@ -17,13 +17,15 @@ licenses = {
   5 => "Attribution-ShareAlike License",
   6 => "Attribution-NoDerivs License",
   7 => "No known copyright restrictions",
-  8 => "United States Government Work"
+  8 => "United States Government Work",
+  9 => "Public Domain Dedication (CC0)",
+  10 => "Public Domain Mark"
 }
 
-ws = session.spreadsheet_by_key(config["spreadsheet_key"]).worksheets[0]
+ws = session.spreadsheet_by_key(config["spreadsheet_key"]).worksheets[config["spreadsheet_worksheet"]]
 
 for row in 2..ws.num_rows
-  flickr_url = ws[row,2]
+  flickr_url = ws[row,config["spreadsheet_flickr_column"]]
 
   flickr_url.chomp!
   flickr_url.sub!(/^http\:/,'https:')
@@ -31,12 +33,15 @@ for row in 2..ws.num_rows
   flickr_url.sub!(/\/$/,'') # strip trailing slash
 
   photo_id = flickr_url.split('/').last.to_s
-  begin
-    flickr_photo = Flickr::Photo.new(photo_id, config["flickr_key"])
-    license = licenses[flickr_photo.license.to_i]
-    ws[row,6] = license
-  rescue RuntimeError => e
-    $stderr.puts e.inspect
+  unless config["spreadsheet_license_column"].nil?
+    begin
+      flickr_photo = Flickr::Photo.new(photo_id, config["flickr_key"])
+      license = licenses[flickr_photo.license.to_i]
+      ws[row,config["spreadsheet_license_column"]] = license
+    rescue RuntimeError => e
+      $stderr.puts "Error processing license for #{photo_id}:"
+      $stderr.puts e.inspect
+    end
   end
 
   puts flickr_url
