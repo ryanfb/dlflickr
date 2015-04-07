@@ -12,7 +12,7 @@ You can use the components piecemeal, or use `update-cron.sh` on an automated ba
 `google_spreadsheet_to_csv.rb` expects configuration variables to be stored in a file named `.secrets.yml`:
 
     ---
-    email: usename@gmail.com
+    email: username@gmail.com
     pass: googlepasswordorapppassword
     spreadsheet_key: googlespreadhseetkeystring
     spreadsheet_worksheet: 0
