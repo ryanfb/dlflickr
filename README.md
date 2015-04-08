@@ -11,7 +11,7 @@ You can use the components piecemeal, or use `update-cron.sh` on an automated ba
 
 ### `dlflickr.rb`
 
-The core `dlflickr.rb` script tries to be as straightforward as possible. For each line of input, it tries to download the maximum resolution Flickr image at that URL using `wget`. If you want to get fancy, it also supports a `-a` flag for archiving Flickr metadata to a separate XML file [like this](https://gist.github.com/853a6e047aaa0063c8a9). This requires a [Flickr API key](https://www.flickr.com/services/api/keys/), which you can pass in with the `-f` flag or the `.secrets.yml` config file described below.
+The core `dlflickr.rb` script tries to be as straightforward as possible. For each line of input, it tries to download the maximum resolution Flickr image at that URL using `wget`. If you want to get fancy, it also supports a `-a` flag for archiving Flickr metadata for each URL to a separate XML file [like this](https://gist.github.com/853a6e047aaa0063c8a9). This requires a [Flickr API key](https://www.flickr.com/services/api/keys/), which you can pass in with the `-f` flag or the `.secrets.yml` config file described below.
 
 `dlflickr.rb` currently *does not* fetch or overwrite existing files on subsequent invocations. Files are saved to `username-or-nsid_photo-id.ext` in the current working directory.
 
