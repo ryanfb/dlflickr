@@ -40,6 +40,6 @@ The core `dlflickr.rb` script tries to be as straightforward as possible. For ea
 Based on the [Archive Team Wiki Flickr page](http://archiveteam.org/index.php?title=Flickr), here are some other Flickr backup tools that didn't quite meet my needs (still, they might meet yours):
 
 * [photobackup](https://hsivonen.fi/photobackup/) - designed to back up all photos and metadata for a single Flickr user
-* [flickrbackup](https://github.com/tiagovaz/flickrbackup) - backs up photos and metadata for a single Flickr user, and only supports writing Flickr metadata back into the original image EXIF
-* [parallel-flickr](https://github.com/straup/parallel-flickr) - backs up photos and metadata for a single Flickr user and and generates a database-backed website for re-hosting them
+* [flickrbackup](https://github.com/tiagovaz/flickrbackup) - backs up photos and metadata for a single Flickr user, but only supports writing Flickr metadata back into the original image EXIF
+* [parallel-flickr](https://github.com/straup/parallel-flickr) - backs up photos and metadata for a single Flickr user, and generates a database-backed website for re-hosting them
 
