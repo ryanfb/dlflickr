@@ -71,8 +71,12 @@ ARGF.each_line do |line|
     xml = append_flickr_response(xml, {'api_key' => config['flickr_key'], 'method' => 'flickr.photos.comments.getList', 'photo_id' => photo_id})
     # flickr.photos.getFavorites
     xml = append_flickr_response(xml, {'api_key' => config['flickr_key'], 'method' => 'flickr.photos.getFavorites', 'photo_id' => photo_id, 'per_page' => 50})
+    # flickr.photos.people.getList
+    xml = append_flickr_response(xml, {'api_key' => config['flickr_key'], 'method' => 'flickr.photos.people.getList', 'photo_id' => photo_id})
     # flickr.photos.getAllContexts
     xml = append_flickr_response(xml, {'api_key' => config['flickr_key'], 'method' => 'flickr.photos.getAllContexts', 'photo_id' => photo_id})
+    # flickr.photos.getExif
+    xml = append_flickr_response(xml, {'api_key' => config['flickr_key'], 'method' => 'flickr.photos.getExif', 'photo_id' => photo_id})
     # flickr.people.getInfo
     owner_nsid = xml.xpath('//photo/owner/@nsid').first ? xml.xpath('//photo/owner/@nsid').first.value : line.split('/')[-2]
     xml = append_flickr_response(xml, {'api_key' => config['flickr_key'], 'method' => 'flickr.people.getInfo', 'user_id' => owner_nsid})
