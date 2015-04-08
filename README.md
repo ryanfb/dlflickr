@@ -42,5 +42,5 @@ Based on the [Archive Team Wiki Flickr page](http://archiveteam.org/index.php?ti
 * [photobackup](https://hsivonen.fi/photobackup/) - designed to back up all photos and metadata for a single Flickr user
 * [flickrbackup](https://github.com/tiagovaz/flickrbackup) - backs up photos and metadata for a single Flickr user, but only supports writing Flickr metadata back into the original image EXIF
 * [parallel-flickr](https://github.com/straup/parallel-flickr) - backs up photos and metadata for a single Flickr user, and generates a database-backed website for re-hosting them
-* [FlickrFckr](https://github.com/ab2525/FlickrFckr) - similarly brutally simple photo & metadata download, but also busted for me
+* [FlickrFckr](https://github.com/ab2525/FlickrFckr) - brutally simple photo & metadata download, but busted for me
 
