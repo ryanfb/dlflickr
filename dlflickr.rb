@@ -35,7 +35,7 @@ end
 OptionParser.new do |opts|
   opts.banner = "Usage: dlflickr.rb [options]"
   opts.on('-a','--[no-]archive','Archive Flickr metadata') {|a| config[:archive] = a}
-  opts.on('-fKEY','--flickr-api-key=KEY','Flickr API key') {|f| config['api_key'] = f}
+  opts.on('-fKEY','--flickr-api-key=KEY','Flickr API key') {|f| config['flickr_key'] = f}
 end.parse!
 
 ARGF.each_line do |line|
