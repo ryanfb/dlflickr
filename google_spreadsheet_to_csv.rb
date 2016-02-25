@@ -1,12 +1,13 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
+require 'google/api_client'
 require 'google_drive'
 require 'yaml'
 require 'flickr'
 
 config = YAML.load_file('.secrets.yml')
-session = GoogleDrive.login(config["email"], config["pass"])
+session = GoogleDrive.saved_session('config.json')
 
 licenses = {
   0 => "All Rights Reserved",

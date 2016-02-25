@@ -20,14 +20,14 @@ The core `dlflickr.rb` script tries to be as straightforward as possible. For ea
 `google_spreadsheet_to_csv.rb` expects configuration variables to be stored in a file named `.secrets.yml`:
 
     ---
-    email: username@gmail.com
-    pass: googlepasswordorapppassword
     spreadsheet_key: googlespreadhseetkeystring
     spreadsheet_worksheet: 0
     spreadsheet_flickr_column: 2
     spreadsheet_license_column: 6
     flickr_key: flickrapikey
     flickr_secret: flickrapikeysecret
+
+You'll also need to follow the [`google-drive-ruby` gem instructions for generating a `config.json` file with OAuth credentials](https://github.com/gimite/google-drive-ruby#how-to-use).
 
 ### `update-cron.sh`
 
